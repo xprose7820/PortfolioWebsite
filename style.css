@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: auto;
+    font-family: 'Comfortaa', sans-serif;
+    background-color: black;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    height: 10vh;
+    width: 100%;
+    color: white;
+    /* border: 5px blue solid; */
+    z-index: 10;
+    padding-left: 7.5rem;
+    top: 6vh;
+    /* padding-right: 5rem; */
+
+}
+
+.header-links {
+    display: flex;
+    gap: 70px;
+    /* Adds space between the links */
+    padding-right: 15.5rem;
+}
+
+.header-links div {
+    /* Additional styling for the links, if needed */
+    cursor: pointer;
+    /* Example to make it look clickable */
+    /* padding-left: 5rem; */
+}
+
+#canvas {
+    position: relative;
+    background-color: black;
+    height: 92vh;
+    width: 95%;
+    left: 0rem;
+    /* border: 5px red solid; */
+    border-radius: 1.5rem;
+}
+
+
+#span0 {
+    font-size: 2rem;
+    margin: 0;
+    pointer-events: none;
+    padding: 8px 16px;
+}
+
+#span1 {
+    font-size: 4rem;
+    pointer-events: none;
+}
+
+.firstCard {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    background-color: black;
+    /* border: 5px green solid; */
+}
+
+.firstCardContent {
+    position: absolute;
+    color: white;
+    /* Choose a color that contrasts with the background */
+    text-align: center;
+    /* Center the text */
+    z-index: 5;
+    /* Make sure it's above the canvas */
+    /* Add other styling as needed */
+    /* border: 2px red solid; */
+    max-width: 80%;
+    font-size: 1.5rem;
+    pointer-events: none;
+    user-select: none;
+}
+
+.secondCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px yellow solid; */
+    position: relative;
+    height: 80vh;
+    background-color: black;
+    margin-top: 7rem;
+}
+
+#rotatingImg1 {
+    
+    /* border: 2px orange solid; */
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    margin-right: 10rem;
+
+    transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
+    background-image: url("./images/pathfinderimg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    transform-style: preserve-3d;
+    background-position: center;
+    /* overflow: hidden; */
+    height: 350px;
+    width: 800px;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
+}
+#rotatingImg1::before, 
+#rotatingImg1::after{
+    content: "";
+    position:absolute; 
+    border-radius: inherit;
+    /* padding: -3rem 1rem;  */
+}
+
+#rotatingImg1::after{
+    inset: -1.5rem;
+    background: linear-gradient(-45deg, rgba(0, 174, 255, 0.9), rgba(255, 0, 255, 0.9));
+    transform: translateZ(-50px);
+    /* padding: 5rem 5rem; */
+
+}
+#rotatingImg1::before{
+    inset:-.5rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(8px); 
+    opacity: .5;
+}
+#secondCardText {
+    border: 2px green solid;
+    color: white;
+}
+
