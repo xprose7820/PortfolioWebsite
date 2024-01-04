@@ -242,3 +242,22 @@ document.getElementById('aboutMeTab').addEventListener('click', function() {
     document.getElementById('aboutMeContent').classList.add("visible");
     document.getElementById('aboutMeContent').classList.remove("hidden");
 });
+
+
+function copyEmail() {
+    var emailText = "xprose7820@gmail.com"; // Replace with your actual email address
+    var tempInput = document.createElement("input");
+    tempInput.value = emailText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+    
+    var tooltip = document.querySelector('.tooltip-text');
+    tooltip.textContent = "Copied!";
+    setTimeout(function() {
+      tooltip.textContent = "Copy Email"; // Reset tooltip text after a delay
+    }, 2000);
+  }
+  
+  

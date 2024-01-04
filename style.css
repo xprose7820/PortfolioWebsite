@@ -25,19 +25,18 @@ body.light-mode .firstCardContent,
 body.light-mode header,
 body.light-mode #secondCardText,
 body.light-mode #thirdCardText,
- 
-body.light-mode #containerAboutMeContent
 
- {
+body.light-mode #containerAboutMeContent {
     color: black !important;
- 
+
 }
 
-body.light-mode .social-links{
-    border-top: 1px solid black; 
+body.light-mode .social-links {
+    border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
-body.light-mode .experience{
+
+body.light-mode .experience {
     border-top: 1px solid black;
 }
 
@@ -96,6 +95,7 @@ header {
     left: 0rem;
     /* border: 5px red solid; */
     border-radius: 1.5rem;
+
 }
 
 
@@ -459,4 +459,44 @@ input:checked+.slider:before {
 
 .experience .role {
     flex-basis: 20%;
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links ul li {
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* Change cursor on hover */
+    position: relative;
+    /* Set position to relative for absolute positioning of children */
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    
+    white-space: nowrap;
+    /* Keep the tooltip text on one line */
+    pointer-events: none;
+    /* Ignore pointer events */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+#email-item:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    /* Enable pointer events when tooltip is visible */
 }
