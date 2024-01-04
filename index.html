@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Particles Effect Javascript</title>
+    <title>Alexander Huynh</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,33 +14,104 @@
     />
   </head>
   <body>
-    <header>
-      <div>Alexander Huynh</div>
+    <header style="font-weight: lighter">
+      <div><a href="#firstCardLink" id="homeLink" style="text-decoration: none; color: inherit">Alexander Huynh</a></div>
       <div class="header-links">
-        <div>Projects</div>
-        <div>About Me</div>
+        <div id="projectsLink"><a href="#secondCardLink">Projects</a></div>
+        <div id="aboutMeTab">About Me</div>
+        <label class="switch">
+          <input type="checkbox" id="modeToggle" />
+          <span class="slider round"></span>
+        </label>
       </div>
     </header>
+    <section id="projectsContent" class="visible">
+      <section class="firstCard" id="firstCardLink">
+        <canvas id="canvas"></canvas>
+        <div class="firstCardContent">
+          <h1>Hi! I'm Alexander Huynh.</h1>
+          <p>
+            As a Software Developer in Indiana with a background in Physics and Mathematics, I blend analytical rigor with coding creativity. My
+            expertise lies in transforming complex problems into elegant software solutions.
+          </p>
+          <p>Let's dive into the world of technology and explore what's possible!</p>
+        </div>
+      </section>
 
-    <section class="firstCard">
-      <canvas id="canvas"></canvas>
-      <div class="firstCardContent">
-        <h1>Hi! I'm Alexander Huynh.</h1>
-        <p>
-          As a Software Developer in Indiana with a background in Physics and Mathematics, I blend analytical rigor with coding creativity. My
-          expertise lies in transforming complex problems into elegant software solutions.
-        </p>
-        <p>Let's dive into the world of technology and explore what's possible!</p>
+      <section class="secondCard" id="secondCardLink">
+        <a href="https://xprose7820.github.io/PathFinderViz/" target="_blank"> <div id="rotatingImg1"></div></a>
+        <div id="secondCardText">
+          <div style="font-size: 1.75rem; font-weight: bold">PathFinding Visualizer</div>
+          <div style="font-weight: lighter">
+            Explore pathfinding algorithms interactively. Watch as they solve mazes in real time, demonstrating the art of computational
+            problem-solving.
+          </div>
+          <div id="techStackCustom1" style="font-weight: lighter">
+            <span style="font-size: 0.6rem; font-weight: lighter">TECH STACK: &nbsp;</span>React, Typescript, HTML, CSS
+          </div>
+        </div>
+      </section>
+
+      <section class="thirdCard" id="thirdCardLink">
+        <div id="thirdCardText">
+          <div style="font-size: 1.75rem; font-weight: bold; text-align: right">BugTracker</div>
+          <div style="font-weight: lighter; text-align: right">
+            Engage with a full-stack bug tracker app. Observe and manage software bugs in real-time, showcasing efficient problem-solving in software
+            development.
+          </div>
+          <div id="techStackCustom2" style="font-weight: lighter">
+            <span style="font-size: 0.6rem; font-weight: lighter">TECH STACK: &nbsp;</span>C#, .NET(MVC), SQL, Javascript, HTML, CSS
+          </div>
+        </div>
+
+        <a href="https://bugtrackerv2.azurewebsites.net/" target="_blank"> <div id="rotatingImg2"></div></a>
+      </section>
+    </section>
+    <section id="aboutMeContent" class="hidden" style="margin-top: 6.5rem;">
+      <div id="containerAboutMeContent" class="containerAbout">
+       
+        <div><h1 style="font-weight: lighter; font-size: 2rem;">About</h1></div>
+
+        <div class="social-links">
+          <ul>
+            <li>Email</li>
+            <li>LinkedIn</li>
+          </ul>
+          <!-- Added a div for the paragraph, assuming class="bio" is for biography or similar content -->
+          <div class="bio">
+            <p>I'm Alexander Huynh, a Software Developer with a strong Physics and Math background from Purdue University. Skilled in languages like C# and Python, I excel in both high-level and lower-level programming challenges. My aim is to innovate and optimize software systems, bringing a research-driven problem-solving approach to any tech team.
+
+            </p>
+          </div>
+        </div>
+       
+        <section class="experiences">
+          <h2>Experiences</h2>
+          <!-- Repeat this block for each experience -->
+          <div class="experience">
+            <div class="date">2018 - 2022</div>
+            <div class="company">Purdue University</div>
+            <div class="role">Undergraduate Researcher - BioPhysics</div>
+            <div class="action">Analyze spectroscopy data, operate Raman laser / UV-Vis</div>
+          </div>
+          <!-- ... other experiences ... -->
+          <div class="experience">
+            <div class="date">2019 - 2020</div>
+            <div class="company">Purdue University</div>
+            <div class="role">Undergraduate Researcher - Dark Matter</div>
+            <div class="action">Uncover Dark Matter phenomena (spallation)</div>
+          </div>
+          <div class="experience">
+            <div class="date">2021 - 2021</div>
+            <div class="company">Missiissippi State University</div>
+            <div class="role">Undergraduate Researcher - High Performance Computing</div>
+            <div class="action">Develop algorithms for anomaly detection in Nano-materials</div>
+          </div>
+        </section>
+        
       </div>
-      
     </section>
 
-    <section class="secondCard">
-      hi
-      <a href="https://xprose7820.github.io/PathFinderViz/" target="_blank">
-      <div id="rotatingImg1"></div></a>
-      <div id="secondCardText">yoalkdjfl;kasjldfjad;sjfasklfj</div>
-    </section>
     <script src="./script.js"></script>
   </body>
 </html>

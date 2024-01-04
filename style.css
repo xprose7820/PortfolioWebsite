@@ -7,11 +7,49 @@ body {
     background-color: black;
 }
 
+body.light-mode {
+    background-color: white;
+}
+
+/* Dark mode CSS */
+body.light-mode .firstCard,
+body.light-mode .secondCard,
+body.light-mode #canvas,
+body.light-mode .thirdCard {
+    background-color: white !important;
+    color: black !important;
+    /* Other styling for dark mode */
+}
+
+body.light-mode .firstCardContent,
+body.light-mode header,
+body.light-mode #secondCardText,
+body.light-mode #thirdCardText,
+ 
+body.light-mode #containerAboutMeContent
+
+ {
+    color: black !important;
+ 
+}
+
+body.light-mode .social-links{
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black;
+}
+body.light-mode .experience{
+    border-top: 1px solid black;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    font-size: .9rem;
     position: fixed;
     height: 10vh;
     width: 100%;
@@ -24,11 +62,22 @@ header {
 
 }
 
+
+
+
 .header-links {
     display: flex;
     gap: 70px;
+    justify-content: space-between;
     /* Adds space between the links */
     padding-right: 15.5rem;
+
+}
+
+.header-links a {
+    text-decoration: none;
+    /* Removes underline */
+    color: inherit;/
 }
 
 .header-links div {
@@ -36,6 +85,7 @@ header {
     cursor: pointer;
     /* Example to make it look clickable */
     /* padding-left: 5rem; */
+
 }
 
 #canvas {
@@ -93,18 +143,30 @@ header {
     align-items: center;
     /* border: 5px yellow solid; */
     position: relative;
-    height: 80vh;
+    height: 100vh;
     background-color: black;
     margin-top: 7rem;
 }
 
+.thirdCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 85vh;
+    background-color: black;
+    margin-top: 2rem;
+
+}
+
+
 #rotatingImg1 {
-    
+
     /* border: 2px orange solid; */
     padding: 2rem;
     border-radius: 1rem;
     color: white;
-    margin-right: 10rem;
+    margin-right: 3.2rem;
 
     transform: perspective(5000px) rotateY(var(--rotateY)) rotateX(var(--rotateX));
     background-image: url("./images/pathfinderimg.png");
@@ -114,35 +176,287 @@ header {
     transform-style: preserve-3d;
     background-position: center;
     /* overflow: hidden; */
-    height: 350px;
-    width: 800px;
+    height: 300px;
+    width: 725px;
     /* padding-left: 1rem;
     padding-right: 1rem; */
 }
-#rotatingImg1::before, 
-#rotatingImg1::after{
+
+#rotatingImg2 {
+
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    margin-left: 3.75rem;
+
+    transform: perspective(5000px) rotateY(var(--rotateY2)) rotateX(var(--rotateX2));
+    background-image: url("./images/bugtracker.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    transform-style: preserve-3d;
+    background-position: center;
+    /* overflow: hidden; */
+    height: 375px;
+    width: 725px;
+
+}
+
+#rotatingImg1::before,
+#rotatingImg1::after {
     content: "";
-    position:absolute; 
+    position: absolute;
     border-radius: inherit;
     /* padding: -3rem 1rem;  */
 }
 
-#rotatingImg1::after{
-    inset: -1.5rem;
-    background: linear-gradient(-45deg, rgba(0, 174, 255, 0.9), rgba(255, 0, 255, 0.9));
-    transform: translateZ(-50px);
-    /* padding: 5rem 5rem; */
+#rotatingImg2::before,
+#rotatingImg2::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
 
 }
-#rotatingImg1::before{
-    inset:-.5rem;
+
+#rotatingImg1::after {
+    content: "";
+    position: absolute;
+    inset: -1.5rem;
+    /* Extended gradient, with quad repetition of the color sequence */
+    background: linear-gradient(-45deg, rgba(9, 0, 88, 0.9), rgb(169, 233, 255), rgba(9, 0, 88, 0.9), rgb(169, 233, 255), rgba(9, 0, 88, 0.9), rgb(169, 233, 255));
+    background-size: 200% 200%;
+    transform: translateZ(-50px);
+    animation: moveGradient 10s linear infinite;
+}
+
+#rotatingImg2::after {
+    content: "";
+    position: absolute;
+    inset: -1.5rem;
+    background: linear-gradient(-45deg, rgba(243, 71, 255, 0.9), rgb(169, 233, 255), rgba(243, 71, 255, 0.9), rgb(169, 233, 255), rgba(243, 71, 255, 0.9), rgb(169, 233, 255));
+    background-size: 200% 200%;
+    transform: translateZ(-50px);
+    animation: moveGradient2 10s linear infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes moveGradient2 {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#rotatingImg1::before {
+    inset: -.5rem;
     background: black;
     transform: translateZ(-49px);
-    filter: blur(8px); 
-    opacity: .5;
+    filter: blur(8px);
+    opacity: .6;
 }
+
+#rotatingImg2::before {
+
+    inset: -.5rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(8px);
+    opacity: .6;
+
+}
+
 #secondCardText {
-    border: 2px green solid;
+    height: 400px;
+    /* border: 2px green solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    max-width: 21rem;
+}
+
+#thirdCardText {
+
+    height: 400px;
+    /* border: 2px green solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    max-width: 21rem;
+
+
+}
+
+#techStackCustom1 {
+    border: 2px solid;
+    border-image-source: linear-gradient(205deg, rgba(9, 0, 88, 0.9), rgb(169, 233, 255));
+    border-image-slice: 1;
+    animation: gradient 10s ease infinite;
+
+    padding: 10px 5px 10px 10px;
+}
+
+#techStackCustom2 {
+
+    border: 2px solid;
+    border-image-source: linear-gradient(205deg, rgba(243, 71, 255, 0.9), rgb(169, 233, 255));
+    border-image-slice: 1;
+    animation: gradient2 10s ease infinite;
+
+    padding: 10px 5px 10px 10px;
+
+}
+
+@keyframes gradient {
+    0% {
+        border-image-source: linear-gradient(205deg, rgba(9, 0, 88, 0.9), rgb(169, 233, 255));
+    }
+
+    100% {
+        border-image-source: linear-gradient(205deg, rgb(169, 233, 255), rgba(9, 0, 88, 0.9));
+    }
+}
+
+@keyframes gradient2 {
+    0% {
+        border-image-source: linear-gradient(205deg, rgba(243, 71, 255, 0.9), rgb(169, 233, 255));
+    }
+
+    100% {
+        border-image-source: linear-gradient(205deg, rgb(169, 233, 255), rgba(243, 71, 255, 0.9));
+    }
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    top: -.6rem;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: -.8rem;
+    right: .8rem;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.visible {
+    display: block !important;
+}
+
+
+.containerAbout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+
     color: white;
 }
 
+.social-links {
+    display: flex;
+    /* Use flexbox to create a two-column layout */
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    align-items: flex-start;
+    padding-top: 1rem;
+    /* Align the items to the start of the flex container */
+}
+
+.social-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* Reset margin for the list */
+}
+
+.social-links ul li {
+    margin-bottom: 5px;
+}
+
+.bio {
+    margin-left: 190px;
+    margin-top: -15px;
+    /* Add some space between the list and the paragraph */
+}
+
+.experiences {
+    margin-top: 20px;
+}
+
+.experience {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid white;
+    padding: 10px 0;
+}
+
+.experience .date {
+    flex-basis: 20%;
+}
+
+.experience .action {
+    flex-basis: 35%;
+}
+
+.experience .company {
+    flex-basis: 20%;
+}
+
+.experience .role {
+    flex-basis: 20%;
+}
