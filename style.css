@@ -137,7 +137,8 @@ header {
     user-select: none;
 }
 
-.secondCard {
+
+.pre_secondCard {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,6 +147,17 @@ header {
     height: 100vh;
     background-color: black;
     margin-top: 7rem;
+}
+
+.secondCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 5px yellow solid; */
+    position: relative;
+    height: 85vh;
+    background-color: black;
+    margin-top: 2rem;
 }
 
 .thirdCard {
@@ -202,6 +214,34 @@ header {
 
 }
 
+#rotatingImgPre {
+
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+    margin-left: 3.75rem;
+
+    transform: perspective(5000px) rotateY(var(--rotateYPre)) rotateX(var(--rotateXPre));
+    background-image: url("./images/image-removebg-preview.png");
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    position: relative;
+    transform-style: preserve-3d;
+    background-position: center;
+    /* overflow: hidden; */
+    height: 420px;
+    width: 300px;
+
+}
+
+#rotatingImgPre::before,
+#rotatingImgPre::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    /* padding: -3rem 1rem;  */
+}
+
 #rotatingImg1::before,
 #rotatingImg1::after {
     content: "";
@@ -216,6 +256,17 @@ header {
     position: absolute;
     border-radius: inherit;
 
+}
+
+#rotatingImgPre::after {
+    content: "";
+    position: absolute;
+    inset: -1.5rem;
+    /* Extended gradient, with quad repetition of the color sequence */
+    background: linear-gradient(-45deg, rgba(255, 35, 35, 0.9), rgb(169, 233, 255), rgba(255, 35, 35, 0.9), rgb(169, 233, 255), rgba(255, 33, 33, 0.9), rgb(169, 233, 255));
+    background-size: 200% 200%;
+    transform: translateZ(-50px);
+    animation: moveGradientPre 10s linear infinite;
 }
 
 #rotatingImg1::after {
@@ -237,6 +288,20 @@ header {
     background-size: 200% 200%;
     transform: translateZ(-50px);
     animation: moveGradient2 10s linear infinite;
+}
+
+@keyframes moveGradientPre {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    50% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 @keyframes moveGradient {
@@ -267,6 +332,14 @@ header {
     }
 }
 
+#rotatingImgPre::before {
+    inset: .5rem;
+    background: black;
+    transform: translateZ(-49px);
+    filter: blur(8px);
+    opacity: .6;
+}
+
 #rotatingImg1::before {
     inset: -.5rem;
     background: black;
@@ -283,6 +356,16 @@ header {
     filter: blur(8px);
     opacity: .6;
 
+}
+
+#pre_secondCardText {
+    height: 400px;
+    /* border: 2px green solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    max-width: 21rem;
 }
 
 #secondCardText {
@@ -308,6 +391,15 @@ header {
 
 }
 
+#techStackCustomPre {
+    border: 2px solid;
+    border-image-source: linear-gradient(205deg, rgba(255, 30, 30, 0.9), rgb(169, 233, 255));
+    border-image-slice: 1;
+    animation: gradientPre 10s ease infinite;
+
+    padding: 10px 5px 10px 10px;
+}
+
 #techStackCustom1 {
     border: 2px solid;
     border-image-source: linear-gradient(205deg, rgba(9, 0, 88, 0.9), rgb(169, 233, 255));
@@ -326,6 +418,16 @@ header {
 
     padding: 10px 5px 10px 10px;
 
+}
+
+@keyframes gradientPre {
+    0% {
+        border-image-source: linear-gradient(205deg, rgba(255, 25, 25, 0.9), rgb(169, 233, 255));
+    }
+
+    100% {
+        border-image-source: linear-gradient(205deg, rgb(169, 233, 255), rgba(255, 27, 27, 0.9));
+    }
 }
 
 @keyframes gradient {
@@ -484,7 +586,7 @@ input:checked+.slider:before {
     color: white;
     text-align: center;
     border-radius: 6px;
-    
+
     white-space: nowrap;
     /* Keep the tooltip text on one line */
     pointer-events: none;

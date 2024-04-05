@@ -3,6 +3,8 @@ const context = canvas.getContext('2d');
 const span0 = document.getElementById('span0');
 const rotatingImg1 = document.getElementById('rotatingImg1');
 const rotatingImg2 = document.getElementById('rotatingImg2');
+const rotatingImgPre = document.getElementById('rotatingImgPre');
+
 
 
 // Setting Canvas to FullScreen
@@ -21,7 +23,12 @@ document.addEventListener("mousemove", (e) => {
 });
 
 document.addEventListener("mousemove", (e) => {
+
     rotateElement2(e, rotatingImg2);
+});
+
+document.addEventListener("mousemove", (e) => {
+    rotateElementPre(e, rotatingImgPre);
 });
 
 // function rotateElement(event, element) {
@@ -81,6 +88,20 @@ function rotateElement2(event, element) {
 }
 
 
+function rotateElementPre(event, element) {
+    const x = event.clientX;
+    const y = event.clientY;
+    const middleX = window.innerWidth / 2;
+    const middleY = window.innerHeight / 2;
+
+    const offsetX = ((x - middleX) / middleX) * 20;
+    const offsetY = ((y - middleY) / middleY) * 20;
+
+    element.style.setProperty("--rotateXPre", -1 * offsetY + "deg");
+    element.style.setProperty("--rotateYPre", offsetX + "deg");
+
+
+}
 
 // Resize the canvas size when window size is resized
 window.addEventListener('resize', () => {

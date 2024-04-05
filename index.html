@@ -17,7 +17,7 @@
     <header style="font-weight: lighter">
       <div><a href="#firstCardLink" id="homeLink" style="text-decoration: none; color: inherit">Alexander Huynh</a></div>
       <div class="header-links">
-        <div id="projectsLink"><a href="#secondCardLink">Projects</a></div>
+        <div id="projectsLink"><a href="#pre_secondCardLink">Projects</a></div>
         <div id="aboutMeTab">About Me</div>
         <label class="switch">
           <input type="checkbox" id="modeToggle" />
@@ -36,6 +36,18 @@
           </p>
           <p>Let's dive into the world of technology and explore what's possible!</p>
         </div>
+      </section>
+
+      <section class="pre_secondCard" id="pre_secondCardLink">
+        <div id="pre_secondCardText">
+          <div style="font-size: 1.75rem; font-weight: bold">SkyScribe</div>
+          <div style="font-weight: lighter">I created a simple cloud-based virtual whiteboard for quick sketches and ideas. It's not fancy, but it's perfect for testing out concepts or quick brainstorming sessions. Just a straightforward space to draw and share thoughts in real time.</div>
+          <div id="techStackCustomPre" style="font-weight: lighter">
+            <span style="font-size: 0.6rem; font-weight: lighter">TECH STACK: &nbsp;</span>Python, Flask, PyTorch
+          </div>
+        </div>
+
+        <a href="https://livegesturev8.uk.r.appspot.com/" target="_blank"> <div id="rotatingImgPre"></div></a>
       </section>
 
       <section class="secondCard" id="secondCardLink">
@@ -67,10 +79,9 @@
         <a href="https://bugtrackerv2.azurewebsites.net/" target="_blank"> <div id="rotatingImg2"></div></a>
       </section>
     </section>
-    <section id="aboutMeContent" class="hidden" style="margin-top: 6.5rem;">
+    <section id="aboutMeContent" class="hidden" style="margin-top: 6.5rem">
       <div id="containerAboutMeContent" class="containerAbout">
-       
-        <div><h1 style="font-weight: lighter; font-size: 2rem;">About</h1></div>
+        <div><h1 style="font-weight: lighter; font-size: 2rem">About</h1></div>
 
         <div class="social-links">
           <ul>
@@ -78,16 +89,20 @@
               <span>Email</span>
               <span class="tooltip-text" onclick="copyEmail()">Copy Email?</span>
             </li>
-            <li><a href="https://www.linkedin.com/in/alexander-huynh31/" target="_blank" style="text-decoration: none; color: inherit;">LinkedIn</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/alexander-huynh31/" target="_blank" style="text-decoration: none; color: inherit">LinkedIn</a>
+            </li>
           </ul>
           <!-- Added a div for the paragraph, assuming class="bio" is for biography or similar content -->
           <div class="bio">
-            <p>I'm Alexander Huynh, a Software Developer with a strong Physics and Math background from Purdue University. Skilled in languages like C# and Python, I excel in both high-level and lower-level programming challenges. My aim is to innovate and optimize software systems, bringing a research-driven problem-solving approach to any tech team.
-
+            <p>
+              I'm Alexander Huynh, a Software Developer with a strong Physics and Math background from Purdue University. Skilled in languages like C#
+              and Python, I excel in both high-level and lower-level programming challenges. My aim is to innovate and optimize software systems,
+              bringing a research-driven problem-solving approach to any tech team.
             </p>
           </div>
         </div>
-       
+
         <section class="experiences">
           <h2>Experiences</h2>
           <!-- Repeat this block for each experience -->
@@ -111,7 +126,6 @@
             <div class="action">Develop algorithms for anomaly detection in Nano-materials</div>
           </div>
         </section>
-        
       </div>
     </section>
 
