@@ -15,7 +15,8 @@ body.light-mode {
 body.light-mode .firstCard,
 body.light-mode .secondCard,
 body.light-mode #canvas,
-body.light-mode .thirdCard {
+body.light-mode .thirdCard,
+body.light-mode .pre_secondCard {
     background-color: white !important;
     color: black !important;
     /* Other styling for dark mode */
@@ -25,6 +26,7 @@ body.light-mode .firstCardContent,
 body.light-mode header,
 body.light-mode #secondCardText,
 body.light-mode #thirdCardText,
+body.light-mode #pre_secondCardText,
 
 body.light-mode #containerAboutMeContent {
     color: black !important;
@@ -62,7 +64,7 @@ header {
 }
 
 
-
+ 
 
 .header-links {
     display: flex;
